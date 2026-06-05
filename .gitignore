@@ -16,6 +16,7 @@ analysis-input-*.txt
 analysis-output-*.json
 analysis-response-*.json
 server-*.log
+doterra-project-tilda.html
 
 # Editor directories and files
 .vscode/*
