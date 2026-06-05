@@ -12,6 +12,21 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module">
+      const isGitHubPages = location.hostname.endsWith('github.io')
+
+      if (isGitHubPages) {
+        const stylesheet = document.createElement('link')
+        stylesheet.rel = 'stylesheet'
+        stylesheet.href = '/news_dashboard/assets/index-CPgKlI-7.css'
+        document.head.appendChild(stylesheet)
+
+        const pagesBundle = '/news_dashboard/assets/index-CoEABLX5.js'
+        import(/* @vite-ignore */ pagesBundle)
+      } else {
+        const devEntry = '/src/main.tsx'
+        import(/* @vite-ignore */ devEntry)
+      }
+    </script>
   </body>
 </html>

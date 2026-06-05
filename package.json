@@ -7,8 +7,8 @@
     "dev": "vite",
     "dev:ai": "node server/analyze-server.mjs",
     "dev:full": "node scripts/dev-full.mjs",
-    "build": "tsc -b && vite build",
-    "build:pages": "tsc -b && vite build --base /news_dashboard/",
+    "build": "tsc -b && node scripts/build-vite.mjs",
+    "build:pages": "tsc -b && node scripts/build-vite.mjs --base /news_dashboard/ --sync-root-pages",
     "lint": "eslint .",
     "preview": "vite preview"
   },
