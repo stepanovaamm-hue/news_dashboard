@@ -8,17 +8,17 @@ const viteBin = join('node_modules', '.bin', process.platform === 'win32' ? 'vit
 const indexPath = 'index.html'
 const originalIndex = readFileSync(indexPath, 'utf8')
 
-const pageDescription = 'Локальный семейный финансовый календарь для доходов, обязательных платежей, остатков и экспортов.'
-const pageTitle = 'Финансовый календарь семьи'
-
 const devIndex = `<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="${pageDescription}" />
-    <title>${pageTitle}</title>
+    <meta
+      name="description"
+      content="Локальный визуальный дашборд аналитики внутреннего информационного поля и новостей компании."
+    />
+    <title>Дашборд аналитики новостей</title>
   </head>
   <body>
     <div id="root"></div>
@@ -30,11 +30,9 @@ const devIndex = `<!doctype html>
 try {
   writeFileSync(indexPath, devIndex, 'utf8')
   const result = spawnSync(viteBin, viteArgs, { stdio: 'inherit', shell: process.platform === 'win32' })
-
   if (result.error) {
     console.error(result.error)
   }
-
   if (result.status !== 0) {
     process.exitCode = result.status ?? 1
   } else if (syncRootPages) {
@@ -74,8 +72,11 @@ function buildHybridPagesIndex({ jsFile, cssFile }) {
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="${pageDescription}" />
-    <title>${pageTitle}</title>
+    <meta
+      name="description"
+      content="Локальный визуальный дашборд аналитики внутреннего информационного поля и новостей компании."
+    />
+    <title>Дашборд аналитики новостей</title>
   </head>
   <body>
     <div id="root"></div>
