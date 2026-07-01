@@ -47,6 +47,22 @@ a {
 }
 
 @layer components {
+  .panel {
+    @apply rounded-3xl border border-white/70 bg-white/90 shadow-card backdrop-blur;
+  }
+
+  .panel-tight {
+    @apply rounded-3xl border border-slate-200 bg-white shadow-soft;
+  }
+
+  .muted-label {
+    @apply text-xs font-semibold uppercase tracking-wide text-slate-500;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-50;
+  }
+
   .writing-vertical {
     writing-mode: vertical-rl;
     text-orientation: mixed;
